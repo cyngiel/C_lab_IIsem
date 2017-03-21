@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int intWrt00 = 0, intWrt01 = 0, intWrt02 = 0, intWrt03 = 0, intWrt04 = 0;
+    int i = 10, *pInt;
+    int intTab[5];
+
+    pInt = &intWrt00;
+    pInt = i++;
+    pInt = &intWrt01;
+    pInt = i++;
+    pInt = &intWrt02;
+    pInt = i++;
+    pInt = &intWrt03;
+    pInt = i++;
+    pInt = &intWrt04;
+    pInt = i++;
+
+    for (i = 0; i < 5; i++){
+        intTab[i];
+
+    }
+
+
+
+
+
+    return 0;
+}

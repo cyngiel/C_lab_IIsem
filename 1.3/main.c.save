@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int a, b, i, p, m;                                                         //p - pierwsza, m - Mersenne'a
+
+    printf("Przedzial liczb Mersenne'a  <a, b>\nPodaj a (wieksze od 0) a: ");
+    do{
+        scanf("$d", &a);
+    }while( a < 0);
+    
+    printf("\nPodaj b (musi byc wieksza od a) b: ");
+    do {
+        scanf("$d", &b);
+    }while(b <= a );
+
+    while(m <= b){
+        
+        
+        
+    }
+
+    return 0;
+}
