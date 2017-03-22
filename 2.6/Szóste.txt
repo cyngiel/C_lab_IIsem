@@ -7,7 +7,7 @@ int main()
 
     char wyraz[80];
     char a;
-    int i=0,b=0;
+    int i,b;
     char *pointer = wyraz;
 
     printf("wpisz wyraz:\t");
@@ -16,9 +16,9 @@ int main()
 a=wyraz[i];
 while(a!='\0')
 {
+	a=wyraz[i];
 	b++;
 	i++;
-	a=wyraz[i];
 }
 printf("%d",b);
 
