@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int suma(float, float);
+int roznica(float, float);
+int iloczyn(float, float);
+int iloraz(float float);
+
+int main()
+{
+    int nav;
+    
+    printf("1- suma, 2- roznica, 3- iloczyn, 4- iloraz, 0")
+    
+    return 0;
+}
+
+int suma(float a, float b){
+    int poprawnosc = 0;
+       
+    printf("\nsuma: %f\n"),a + b;
+    poprawnosc = 1;
+    
+    return poprawnosc;
+}
+
+int roznica(float a, float b){
+    int poprawnosc = 0;
+       
+    printf("\nroznica: %f\n"),a - b;
+    poprawnosc = 1;
+    
+    return poprawnosc;
+}
+
+int iloczyn(float a, float b){
+
+int poprawnosc = 0;
+       
+    printf("\niloczyn: %f\n"),a * b;
+    poprawnosc = 1;
+    
+    return poprawnosc;
+}
+
+int iloraz(float a, float b){
+
+ int poprawnosc = 0;
+    if(b == 0) return poprawnosc; 
+    printf("\niloraz: %f\n"),a /b;
+    poprawnosc = 1;
+    
+    return poprawnosc;
+}

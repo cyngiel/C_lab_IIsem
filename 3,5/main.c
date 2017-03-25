@@ -7,12 +7,13 @@ int main()
 {
     FILE *pfrom, *pto;
     char from[80], to[80], temp;
+    fpos_t dlugosc;
 
     printf("from.txt, to.txt\nPodaj sciezke do pliku zrodlowego: ");
     do{
 
     gets(from);
-    pfrom = fopen(from, "r");
+    pfrom = fopen(from, "rb");
         if (pfrom == NULL){
             printf("Blad otwarcia pliku, sprobuj ponownie\n");
         }
@@ -24,20 +25,28 @@ int main()
     do{
 
     gets(to);
-    pto = fopen(to, "w");
+    pto = fopen(to, "wb");
         if (pto == NULL){
             printf("Blad otwarcia pliku, sprobuj ponownie\n");
         }
         }while (pto == NULL);
 
 
+    fseek(pfrom, 0, SEEK_END);
+    fgetpos(pfrom, &dlugosc);
+    printf("%d\n", dlugosc);
+    char tab[dlugosc];
+    int i;
+    fread(tab, sizeof(pfrom), dlugosc, pfrom);
 
-
-
-    while ( (temp = fread (pto, sizeof rozmiar(from), sizeof unsigned, pfrom) ) != EOF) {
-        fputc (temp, pto);
-
+    for(i = 0; i < dlugosc; i++){
+        printf("%c", tab[i]);
     }
+
+
+    fwrite(tab, sizeof(pfrom), dlugosc, pto);
+
+
 
     fclose(pfrom);
     fclose(pto);

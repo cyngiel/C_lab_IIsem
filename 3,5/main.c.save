@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+int rozmiar(char[]);
+
 
 int main()
 {
@@ -26,11 +28,15 @@ int main()
         if (pto == NULL){
             printf("Blad otwarcia pliku, sprobuj ponownie\n");
         }
+        }while (pto == NULL);
 
 
 
-    while ( (temp = fread (temp, sizeof pfrom, 1, pfrom) ) != EOF) {
+
+
+    while ( (temp = fread (pto, sizeof rozmiar(from), sizeof unsigned, pfrom) ) != EOF) {
         fputc (temp, pto);
+        
 
     }
 
@@ -40,4 +46,21 @@ int main()
 
 
     return 0;
+}
+
+int rozmiar(char bufor[]){
+	int i=0, rozmiar = 0;
+	FILE *pf;
+	pf = fopen(bufor, "r");
+
+	if (pf == NULL){
+        printf("Blad otwarcia pliku\n");
+        exit(1);
+    }
+
+	while( fgetc(pf) != EOF){
+
+        rozmiar++;
+    }   
+	return rozmiar;
 }
