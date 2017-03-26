@@ -36,11 +36,12 @@ int main()
     fgetpos(pfrom, &dlugosc);
     printf("%d\n", dlugosc);
     char tab[dlugosc];
-    int i;
+    int i, x;
     fread(tab, sizeof(pfrom), dlugosc, pfrom);
-
+    x = dlugosc / 100;
     for(i = 0; i < dlugosc; i++){
-        printf("%c", tab[i]);
+        printf("\r%d", x);
+        x+=x;
     }
 
 

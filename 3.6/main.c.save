@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    size_t n;
+    int suma = 0, x;
+    FILE *pfrom, *pto;
+    char from[80], to[80];
+
+    printf("from.txt,  to.txt\n");
+    printf("Podaj sciezke plku zrodlowego: \n");
+    do{
+        gets(from);
+        pfrom = fopen(from, "r");
+         if(pfrom != NULL) break;
+         printf("\nblad otwardzia pliku, sprobuj jescze raz: ");
+    }while(1);
+    system("cls");
+    printf("from.txt,  to.txt\n\n%s\n",from);
+    printf("Podaj sciezke plku docelowego: \n");
+    do{
+        gets(to);
+        pto = fopen(to, "w");
+        if(pto != NULL) break;
+        printf("\nblad otwardzia pliku, sprobuj jescze raz: ");
+
+    }while(1);
+
+
+    printf("podaj n: ");
+    n = getchar() - '0';
+
+    system("cls");
+    printf("%s, %s, %x",from, to, n );
+
+    for(i = 0; i < n; i++){
+        
+    
+    if(x == (fgetc(pfrom)) == EOF && i < n) 
+
+        suma += x;
+    
+    }
+    return 0;
+}
